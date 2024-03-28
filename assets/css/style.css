@@ -10,11 +10,13 @@ html{
 body{
   background-color: var(--clr-light);
   color: var(--clr-dark);
+  border: var(--clr-dark);
 }  
 
 .darkmode {
   background-color: var(--clr-dark);
   color: var(--clr-light);
+  border: var(--clr-light)
 }
 
 header {
@@ -28,7 +30,6 @@ header {
     padding-left: 15px;
     font-weight: bold;
     border-bottom: 5px;
-    border: var(--clr-dark);
     border-bottom-style: dashed;
 }
 
