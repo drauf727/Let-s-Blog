@@ -34,10 +34,21 @@ header {
 }
 
 .container{
+  padding-top: 5px;
   display: flex;
 }
 
 .image {
-  height: 5cap;
-  width: min-content;
+  display: flexbox;
+  flex-basis: 40%;
+}
+
+.form {
+align-items: stretch;
+display: flex;
+flex-direction: column;
+justify-content: center;
+text-align: center;
+padding-left: 70px;
+flex-basis: 60%;
 }
