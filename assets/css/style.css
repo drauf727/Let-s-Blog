@@ -39,27 +39,32 @@ header {
   width: 50px;
 }
 
-.container{
-  padding-top: 5px;
-  display: flex;
-  flex-shrink: 0;
-}
+.container {
+  display: grid;
+  grid-template-rows: 100%;
+  grid-template-columns: 50% 50%;
+  padding-top: 20px;
+ }
 
-.image {
-  display: flex;
-  flex-basis: 40%;
-  flex-shrink: initial;
+
+.letsblog {
+  height: 100%;
+  width: 100%;
 }
 
 .form {
-align-items: stretch;
+  width: 50%;
 display: flex;
 flex-direction: column;
 justify-content: center;
 text-align: center;
-padding-left: 70px;
-flex-basis: 60%;
+padding-left: 15%;
 }
+
+.blogging {
+width: 100%
+}
+
 
 button {
   background-color: yellow;

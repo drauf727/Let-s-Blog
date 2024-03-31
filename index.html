@@ -11,26 +11,27 @@
        <h1>Let's Blog</h1> <img  id="mode" class="mode" src="./assets/sun_light_mode_day-512.webp">
     </header>
     <div class="container">
-      <div class="image">
-        <img src = "./assets/blogimage.jpg">
-      </div>
-      <div class="form">
+      <section class="image">
+        <img class = "letsblog" src = "./assets/blogimage.jpg">
+      </section>
+      <section class="form">
         <h2>Let us know what's on your mind!!</h2>
         <form>
           <div>
             <br>
           <label for "user">User Name:</label><br>
-          <input type="text" id="user" name="user"><br>
+          <input class = "blogging" type="text" id="user" name="user" required><br>
           </div>
           <div>
             <br>
           <label for "title">Title:</label><br>
-          <input type="text" id="title" name="title">
+          <input class = "blogging" type="text" id="title" name="title" required>
           </div> 
           <div>
           <br>
           <label for "theblog">Say It:</label><br>
-          <input type="text" id="theblog" name="theblog">
+          <textarea class = "blogging" type="text" id="theblog" name="theblog" required>
+          </textarea>
           </div>
           <div>
             <br>
@@ -38,7 +39,7 @@
             <button type="submit">Submit</button>
           </div>
         </form>
-      </div>
+      </section>
     </div>
 </body>
 <script src = "./assets/js/logic.js"></script>
