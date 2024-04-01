@@ -73,3 +73,22 @@
     background-color: var(--clr-light);
   }
   
+  .footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 10px;
+  }
+
+  .footertitle {
+    font-size: x-large;
+    font-weight: bold;
+    padding-bottom: 10px;
+    text-align: center;
+  }
+
+#a{
+  color: yellow
+}
