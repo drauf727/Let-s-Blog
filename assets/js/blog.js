@@ -1,12 +1,16 @@
-const jsonObject = localStorage.getItem("formSubmit");
+const jsonObject = [];
+jsonObject.push(localStorage.getItem("formSubmit"));
 const submissionObjects = JSON.parse(jsonObject);
-var submissionObject = Object.entries(submissionObjects);
+const test = [];
+const submissionObject = [];
+test.push(submissionObjects);
+submissionObject = Object.entries(test);
 console.log(submissionObject);
 
 const displayBlog = function (submissionObject) {
     const blogText = document.querySelector('#blog-table');
   
-    // blogText.innerHTML = '';
+    blogText.innerHTML = '';
   
     for (let i = 0; i < submissionObject.length; i++) {
       const currentBlog = submissionObject[i];
@@ -18,14 +22,14 @@ const displayBlog = function (submissionObject) {
       newBlogPost.append(titleCell);
   
       const blogCell = document.createElement("td");
-      blogCell.textContent = currentEmployee.theblog;
+      blogCell.textContent = currentBlog.theblog;
       newBlogPost.append(blogCell);
   
       const userNameCell = document.createElement("td");
-      userNameCell.textContent = currentEmployee.user;
+      userNameCell.textContent = currentBlog.user;
       newBlogPost.append(userNameCell);
   
-      currentBlog.append(newBlogPost);
+      blogText.append(newBlogPost);
     }
   }
 
@@ -52,3 +56,4 @@ const disableDarkMode = () => {
     document.body.classList.remove("darkmode");
 }
 
+displayBlog();
