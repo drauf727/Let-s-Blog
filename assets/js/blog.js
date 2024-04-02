@@ -3,18 +3,62 @@ const submissionObjects = JSON.parse(jsonObject);
 var submissionObject = Object.entries(submissionObjects);
 console.log(submissionObject);
 
-function generateBlog(blogging){
-    let item = "";
-    for(let i=0; i < blogging.length; i++) {
-        item += `<li>${blogging[i][1].user}</li>`;
+// function generateBlog(blogging){
+//     let itemTitle = "";
+//     let itemTheBlog = "";
+//     let itemUser = "";
+//     let itemFullBlog;
+//     for(let i=0; i < blogging.length; i++) {
+//         itemTitle += `${blogging[i][1].title}`;
+//         itemTheBlog += `${blogging[i][1].theblog}`;
+//         itemUser += `${blogging[i][1].user}`;
+//         itemFullBlog = [itemTitle, itemTheBlog, itemUser];
+//     }
+//     console.log(itemFullBlog)
+//     return itemFullBlog;
+    
+// }
+
+function generateTitle(x){
+    let itemTitle = "";
+    for(let i=0; i< x.length; i++){
+        itemTitle += `${x[i][1].title}`;
     }
-    return item;
+    return itemTitle;
 }
 
-document.querySelector("main").innerHTML = `
-<ol>
+function generateBlog(x){
+    let itemBlog = "";
+    for(let i=0; i< x.length; i++){
+        itemBlog += `${x[i][1].theblog}`;
+    }
+    return itemBlog;
+}
+
+function generateUser(x){
+    let itemUser = "";
+    for(let i=0; i< x.length; i++){
+        itemUser += `${x[i][1].user}`;
+    }
+    return itemUser;
+}
+
+document.getElementById("blog-table").innerHTML = `
+<tr>
+<td>
+${generateTitle(submissionObject)}
+</td>
+</tr>
+<tr>
+<td>
 ${generateBlog(submissionObject)}
-</ol>
+</td>
+</tr>
+<tr>
+<td>
+Posted by: ${generateUser(submissionObject)}
+</td>
+</tr>
 `;
 
 
