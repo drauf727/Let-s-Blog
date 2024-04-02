@@ -1,37 +1,66 @@
-const jsonObject = [];
-jsonObject.push(localStorage.getItem("formSubmit"));
-const submissionObjects = JSON.parse(jsonObject);
-const test = [];
-const submissionObject = [];
-test.push(submissionObjects);
-submissionObject = Object.entries(test);
+const submissionObject = localStorage.getItem("formSubmit") ? JSON.parse(localStorage.getItem("formSubmit")) : [];
 console.log(submissionObject);
+const blogContainer = document.getElementById("blog-posts");
 
-const displayBlog = function (submissionObject) {
-    const blogText = document.querySelector('#blog-table');
-  
-    blogText.innerHTML = '';
-  
-    for (let i = 0; i < submissionObject.length; i++) {
-      const currentBlog = submissionObject[i];
-  
-      const newBlogPost = document.createElement("tr");
-  
-      const titleCell = document.createElement("td");
-      titleCell.textContent = currentBlog.title;
-      newBlogPost.append(titleCell);
-  
-      const blogCell = document.createElement("td");
-      blogCell.textContent = currentBlog.theblog;
-      newBlogPost.append(blogCell);
-  
-      const userNameCell = document.createElement("td");
-      userNameCell.textContent = currentBlog.user;
-      newBlogPost.append(userNameCell);
-  
-      blogText.append(newBlogPost);
-    }
-  }
+function generateBlog(blogging){
+    for(let i=0; i < blogging.length; i++) {
+        const blogHeader = document.createElement('h1');
+        const blogBody = document.createElement('p');
+        const blogFooter = document.createElement('p');
+        blogHeader.textContent = `${blogging[i].title}`;
+        blogBody.textContent = `${blogging[i].theblog}`;
+        blogFooter.textContent = `${blogging[i].user}`;
+        blogContainer.appendChild(blogHeader);
+        blogContainer.appendChild(blogBody);
+        blogContainer.appendChild(blogFooter);
+    }    
+}
+
+generateBlog(submissionObject);
+
+// function generateTitle(x){
+//     let itemTitle = "";
+//     for(let i=0; i< x.length; i++){
+//         itemTitle += `${x[i][1].title}`;
+//     }
+//     return itemTitle;
+// }
+
+// function generateBlog(x){
+//     let itemBlog = "";
+//     for(let i=0; i< x.length; i++){
+//         itemBlog += `${x[i][1].theblog}`;
+//     }
+//     return itemBlog;
+// }
+
+// function generateUser(x){
+//     let itemUser = "";
+//     for(let i=0; i< x.length; i++){
+//         itemUser += `${x[i][1].user}`;
+//     }
+//     return itemUser;
+// }
+
+// document.getElementById("blog-table").innerHTML = `
+// <tr>
+// <td>
+// ${generateTitle(submissionObject)}
+// </td>
+// </tr>
+// <tr>
+// <td>
+// ${generateBlog(submissionObject)}
+// </td>
+// </tr>
+// <tr>
+// <td>
+// Posted by: ${generateUser(submissionObject)}
+// </td>
+// </tr>
+// `;
+
+
 
 let darkMode = "no";
 const darkModeToggle = document.querySelector('#mode');
@@ -55,5 +84,3 @@ const enableDarkMode = () => {
 const disableDarkMode = () => {
     document.body.classList.remove("darkmode");
 }
-
-displayBlog();
