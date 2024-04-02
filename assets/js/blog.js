@@ -3,31 +3,21 @@ const submissionObjects = JSON.parse(jsonObject);
 var submissionObject = Object.entries(submissionObjects);
 console.log(submissionObject);
 
-const displayBlog = function (submissionObject) {
-    const blogText = document.querySelector('#blog-table');
-  
-    // blogText.innerHTML = '';
-  
-    for (let i = 0; i < submissionObject.length; i++) {
-      const currentBlog = submissionObject[i];
-  
-      const newBlogPost = document.createElement("tr");
-  
-      const titleCell = document.createElement("td");
-      titleCell.textContent = currentBlog.title;
-      newBlogPost.append(titleCell);
-  
-      const blogCell = document.createElement("td");
-      blogCell.textContent = currentEmployee.theblog;
-      newBlogPost.append(blogCell);
-  
-      const userNameCell = document.createElement("td");
-      userNameCell.textContent = currentEmployee.user;
-      newBlogPost.append(userNameCell);
-  
-      currentBlog.append(newBlogPost);
+function generateBlog(blogging){
+    let item = "";
+    for(let i=0; i < blogging.length; i++) {
+        item += `<li>${blogging[i][1].user}</li>`;
     }
-  }
+    return item;
+}
+
+document.querySelector("main").innerHTML = `
+<ol>
+${generateBlog(submissionObject)}
+</ol>
+`;
+
+
 
 let darkMode = "no";
 const darkModeToggle = document.querySelector('#mode');
