@@ -9,7 +9,7 @@ function generateBlog(blogging){
         const blogFooter = document.createElement('p');
         blogHeader.textContent = `${blogging[i].title}`;
         blogBody.textContent = `${blogging[i].theblog}`;
-        blogFooter.textContent = `${blogging[i].user}`;
+        blogFooter.textContent = `Posted by: ${blogging[i].user}`;
         blogContainer.appendChild(blogHeader);
         blogContainer.appendChild(blogBody);
         blogContainer.appendChild(blogFooter);
